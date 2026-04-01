@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Teaching — Kodjo Barnor</title>
+  <style>
+    :root {
+      --masthead-bg: #494e52;
+      --text: #3d4144;
+      --muted: #7a8288;
+      --link: #52adc8;
+      --link-hover: #1e6f8b;
+      --border: #f2f3f3;
+      --max: 1280px;
+      --font-body: Georgia, "Times New Roman", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      margin: 0;
+      background: #fff;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
+
+    .masthead {
+      background: var(--masthead-bg);
+      border-bottom: 1px solid #3d4144;
+    }
+    .masthead__inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .masthead__title a {
+      color: #fff;
+      font-family: var(--font-sans);
+      font-weight: 600;
+      text-decoration: none;
+    }
+
+    .greedy-nav {
+      display: flex;
+      list-style: none;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+    }
+    .greedy-nav a {
+      color: #fff;
+      padding: 0.5rem 0.85rem;
+      text-decoration: none;
+    }
+    .greedy-nav a.active { font-weight: 600; }
+
+    .page__wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 220px 1fr;
+      gap: 3rem;
+    }
+
+    .author-profile {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+    }
+    .author-profile__avatar {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 50%;
+      margin-bottom: 0.75rem;
+    }
+
+    .page__content h2 {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 2rem 0 1rem;
+    }
+
+    .teaching-block {
+      margin-bottom: 1.5rem;
+    }
+
+    .site-footer {
+      background: var(--masthead-bg);
+      color: rgba(255,255,255,0.5);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__title"><a href="index.html">Kodjo Barnor</a></div>
+      <ul class="greedy-nav">
+        <li><a href="index.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="cv.html">CV</a></li>
+        <li><a href="teaching.html" class="active">Teaching</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="page__wrap">
+    <aside>
+      <div class="author-profile">
+        <img class="author-profile__avatar" src="profile.jpg" alt="Kodjo Barnor" />
+        <div><strong>Kodjo Barnor</strong></div>
+        <div style="color: var(--muted); font-size: 0.85rem;">PhD Candidate in Agricultural Economics<br>Texas A&amp;M University</div>
+      </div>
+    </aside>
+
+    <main class="page__content">
+      <h2>Instructor of Record</h2>
+      <div class="teaching-block">
+        AGEC 350: Environmental Economics — Summer 2026 (scheduled)<br>
+        AGEC 452: International Trade — Summer 2026 (scheduled)
+      </div>
+
+      <h2>Teaching Assistant</h2>
+      <div class="teaching-block">
+        AGEC 452: International Trade and Agriculture<br>
+        AGEC 340: Agribusiness Management<br>
+        AGEC 317: Economic Analysis for Agribusiness Management<br>
+        AGEC 350: Environmental and Natural Resource Economics
+      </div>
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    © 2026 Kodjo Barnor
+  </footer>
+
+</body>
+</html>

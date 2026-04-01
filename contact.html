@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — Kodjo Barnor</title>
+  <style>
+    :root {
+      --masthead-bg: #494e52;
+      --text: #3d4144;
+      --muted: #7a8288;
+      --link: #52adc8;
+      --link-hover: #1e6f8b;
+      --border: #f2f3f3;
+      --max: 1280px;
+      --font-body: Georgia, "Times New Roman", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #fff;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
+
+    /* ── MASTHEAD ── */
+    .masthead {
+      background: var(--masthead-bg);
+      border-bottom: 1px solid #3d4144;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .masthead__inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .masthead__title a {
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .masthead__title a:hover { opacity: 0.8; text-decoration: none; color: #fff; }
+
+    .greedy-nav {
+      display: flex;
+      list-style: none;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+    }
+    .greedy-nav a {
+      color: #fff;
+      padding: 0.5rem 0.85rem;
+      text-decoration: none;
+    }
+    .greedy-nav a:hover { opacity: 0.75; text-decoration: none; color: #fff; }
+    .greedy-nav a.active { font-weight: 600; }
+
+    /* ── TWO-COLUMN LAYOUT ── */
+    .page__wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 5rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    /* ── SIDEBAR ── */
+    .author-profile {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+    }
+    .author-profile__avatar {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 1rem;
+    }
+    .author-profile__name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.25rem;
+    }
+    .author-profile__bio {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+    .author-profile__follow-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .author-profile__links {
+      list-style: none;
+      font-size: 0.85rem;
+    }
+    .author-profile__links li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+      color: var(--muted);
+    }
+    .author-profile__links li a { color: var(--muted); }
+    .author-profile__links li a:hover { color: var(--link); text-decoration: none; }
+    .icon { font-size: 0.8rem; flex-shrink: 0; }
+
+    /* ── MAIN CONTENT ── */
+    .page__content {
+      padding-top: 0.5rem;
+    }
+    .page__content h2 {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 1.25rem;
+      color: var(--text);
+    }
+    .contact-block {
+      font-size: 1rem;
+      line-height: 2.1;
+    }
+    .contact-block p {
+      margin-bottom: 1.5rem;
+    }
+    .contact-label {
+      font-family: var(--font-sans);
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.09em;
+      color: var(--muted);
+      display: block;
+      margin-bottom: 0.15rem;
+    }
+
+    /* ── FOOTER ── */
+    .site-footer {
+      background: var(--masthead-bg);
+      color: rgba(255,255,255,0.5);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .site-footer a { color: rgba(255,255,255,0.65); }
+    .site-footer a:hover { color: #fff; text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .masthead__inner { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+      .greedy-nav { flex-wrap: wrap; }
+      .page__wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+      .author-profile__avatar { max-width: 150px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- MASTHEAD -->
+  <div class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__title"><a href="index.html">Kodjo Barnor</a></div>
+      <nav>
+        <ul class="greedy-nav">
+          <li><a href="index.html">About</a></li>
+          <li><a href="research.html">Research</a></li>
+          <li><a href="CV__Kodjo_Barnor.pdf">CV</a></li>
+          <li><a href="teaching.html">Teaching</a></li>
+          <li><a href="contact.html" class="active">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <!-- BODY -->
+  <div class="page__wrap">
+
+    <!-- SIDEBAR -->
+    <aside>
+      <div class="author-profile">
+        <img class="author-profile__avatar" src="profile.jpg" alt="Kodjo Barnor" />
+        <div class="author-profile__name">Kodjo Barnor</div>
+        <div class="author-profile__bio">PhD Candidate in Agricultural Economics<br>Texas A&amp;M University</div>
+        <span class="author-profile__follow-label">Follow</span>
+        <ul class="author-profile__links">
+          <li><span class="icon">📍</span> College Station, Texas</li>
+          <li><span class="icon">✉️</span> <a href="mailto:kodjo.barnor@tamu.edu">Email</a></li>
+          <li><span class="icon">🔗</span> <a href="CV__Kodjo_Barnor.pdf">CV</a></li>
+          <li><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/kodjobarnor" target="_blank">LinkedIn</a></li>
+          <li><span class="icon">🎓</span> <a href="https://sites.google.com/view/kodjobarnor/" target="_blank">Current Website</a></li>
+          <li><span class="icon">🎓</span> <a href="#">Google Scholar</a></li>
+          <li><span class="icon">💻</span> <a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <!-- MAIN -->
+    <main class="page__content">
+      <h2><strong>Contact</strong></h2>
+      <div class="contact-block">
+
+        <p>
+          <span class="contact-label">Email</span>
+          <a href="mailto:kodjo.barnor@tamu.edu">kodjo.barnor@tamu.edu</a><br>
+          <a href="mailto:kodjobarnor@gmail.com">kodjobarnor@gmail.com</a>
+        </p>
+
+        <p>
+          <span class="contact-label">Mailing Address</span>
+          Department of Agricultural Economics<br>
+          Texas A&amp;M University<br>
+          600 John Kimbrough Blvd<br>
+          College Station, TX 77843
+        </p>
+
+        <p>
+          <span class="contact-label">Links</span>
+          <a href="https://www.linkedin.com/in/kodjobarnor" target="_blank">LinkedIn</a><br>
+        </p>
+
+      </div>
+    </main>
+  </div>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    © 2026 Kodjo Barnor. Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> &amp;
+    <a href="https://github.com/academicpages/academicpages.github.io" target="_blank">AcademicPages</a>,
+    a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" target="_blank">Minimal Mistakes</a>.
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research — Kodjo Barnor</title>
+  <style>
+    :root {
+      --masthead-bg: #494e52;
+      --text: #3d4144;
+      --muted: #7a8288;
+      --link: #52adc8;
+      --link-hover: #1e6f8b;
+      --border: #f2f3f3;
+      --max: 1280px;
+      --font-body: Georgia, "Times New Roman", serif;
+      --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: #fff;
+      color: var(--text);
+      font-family: var(--font-body);
+      font-size: 16px;
+      line-height: 1.7;
+    }
+
+    a { color: var(--link); text-decoration: none; }
+    a:hover { color: var(--link-hover); text-decoration: underline; }
+
+    .masthead {
+      background: var(--masthead-bg);
+      border-bottom: 1px solid #3d4144;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .masthead__inner {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .masthead__title a {
+      color: #fff;
+      font-family: var(--font-sans);
+      font-size: 1rem;
+      font-weight: 600;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+    }
+    .masthead__title a:hover { opacity: 0.8; text-decoration: none; color: #fff; }
+
+    .greedy-nav {
+      display: flex;
+      list-style: none;
+      font-family: var(--font-sans);
+      font-size: 0.9rem;
+    }
+    .greedy-nav a {
+      color: #fff;
+      padding: 0.5rem 0.85rem;
+      text-decoration: none;
+    }
+    .greedy-nav a:hover { opacity: 0.75; text-decoration: none; color: #fff; }
+    .greedy-nav a.active { font-weight: 600; }
+
+    .page__wrap {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 3rem;
+      align-items: start;
+    }
+
+    .author-profile {
+      font-family: var(--font-sans);
+      font-size: 0.88rem;
+    }
+    .author-profile__avatar {
+      width: 100%;
+      max-width: 200px;
+      border-radius: 50%;
+      display: block;
+      margin-bottom: 0.75rem;
+    }
+    .author-profile__name {
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: var(--text);
+      margin-bottom: 0.1rem;
+    }
+    .author-profile__bio {
+      color: var(--muted);
+      font-size: 0.84rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.4;
+    }
+    .author-profile__follow-label {
+      display: block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      border-top: 1px solid var(--border);
+      padding-top: 0.6rem;
+      margin-bottom: 0.5rem;
+    }
+    .author-profile__links {
+      list-style: none;
+      font-size: 0.85rem;
+    }
+    .author-profile__links li {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      margin-bottom: 0.35rem;
+      color: var(--muted);
+    }
+    .author-profile__links li a { color: var(--muted); }
+    .author-profile__links li a:hover { color: var(--link); text-decoration: none; }
+    .icon { font-size: 0.8rem; flex-shrink: 0; }
+
+    .page__content h2 {
+      font-family: var(--font-sans);
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin: 2.5rem 0 1.25rem;
+      color: var(--text);
+    }
+    .page__content h2:first-child { margin-top: 0; }
+
+    .paper {
+      margin-bottom: 1.75rem;
+    }
+    .paper__title {
+      font-weight: 700;
+      font-size: 1rem;
+      color: var(--text);
+    }
+    .paper__coauthors {
+      font-style: italic;
+      font-size: 0.95rem;
+      color: var(--text);
+    }
+    .paper__journal {
+      font-size: 0.95rem;
+      color: var(--text);
+      display: block;
+      margin: 0.1rem 0 0.35rem;
+    }
+    .paper__links {
+      font-family: var(--font-sans);
+      font-size: 0.83rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin: 0.2rem 0 0.5rem;
+    }
+    .paper__links a::before { content: "["; }
+    .paper__links a::after  { content: "]"; }
+
+    .paper__abstract {
+      font-size: 0.93rem;
+      color: var(--text);
+      margin-top: 0.5rem;
+      line-height: 1.65;
+      border-left: 3px solid var(--border);
+      padding-left: 0.85rem;
+    }
+
+    .wip-list {
+      list-style: none;
+      padding: 0;
+    }
+    .wip-list li {
+      padding: 0.25rem 0;
+      font-size: 0.97rem;
+      border-bottom: 1px dotted var(--border);
+    }
+    .wip-list li:last-child { border-bottom: none; }
+
+    .site-footer {
+      background: var(--masthead-bg);
+      color: rgba(255,255,255,0.5);
+      font-family: var(--font-sans);
+      font-size: 0.78rem;
+      text-align: center;
+      padding: 1rem;
+      margin-top: 2rem;
+    }
+    .site-footer a { color: rgba(255,255,255,0.65); }
+    .site-footer a:hover { color: #fff; text-decoration: underline; }
+
+    @media (max-width: 600px) {
+      .masthead__inner { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+      .greedy-nav { flex-wrap: wrap; }
+      .page__wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+      .author-profile__avatar { max-width: 150px; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="masthead">
+    <div class="masthead__inner">
+      <div class="masthead__title"><a href="index.html">Kodjo Barnor</a></div>
+      <nav>
+        <ul class="greedy-nav">
+          <li><a href="index.html">About</a></li>
+          <li><a href="research.html" class="active">Research</a></li>
+          <li><a href="cv.pdf">CV</a></li>
+          <li><a href="teaching.html">Teaching</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+
+  <div class="page__wrap">
+    <aside>
+      <div class="author-profile">
+        <img class="author-profile__avatar" src="profile.jpg" alt="Kodjo Barnor" />
+        <div class="author-profile__name">Kodjo Barnor</div>
+        <div class="author-profile__bio">PhD Candidate in Agricultural Economics<br>Texas A&amp;M University</div>
+        <span class="author-profile__follow-label">Follow</span>
+        <ul class="author-profile__links">
+          <li><span class="icon">📍</span> College Station, Texas</li>
+          <li><span class="icon">✉️</span> <a href="mailto:kodjo.barnor@tamu.edu">Email</a></li>
+          <li><span class="icon">🔗</span> <a href="cv.pdf">CV</a></li>
+          <li><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/kodjobarnor" target="_blank">LinkedIn</a></li>
+          <li><span class="icon">🎓</span> <a href="https://sites.google.com/view/kodjobarnor/" target="_blank">Current Website</a></li>
+          <li><span class="icon">🎓</span> <a href="#">Google Scholar</a></li>
+          <li><span class="icon">💻</span> <a href="#">GitHub</a></li>
+        </ul>
+      </div>
+    </aside>
+
+    <main class="page__content">
+      <h2><strong>Publications</strong></h2>
+
+      <div class="paper">
+        <span class="paper__title">Vitamin Supplements Intake and Diet Quality in Emerging Economies: Evidence from Chile</span><br>
+        <span class="paper__coauthors">(with Emiliano Lopez Barrera, Grace Melo, and Paula Urbina)</span>
+        <span class="paper__journal"><em>Journal of Policy Modeling</em>, 2026</span>
+        <div class="paper__links">
+          <a href="https://www.sciencedirect.com/science/article/pii/S0161893826000153" target="_blank">Journal Link</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <span class="paper__title">The Impact of Air Pollution on Mental Health</span><br>
+        <span class="paper__journal"><em>Journal of Environmental Economics and Management</em> 133: 103198, 2025</span>
+        <div class="paper__links">
+          <a href="https://doi.org/10.1016/j.jeem.2025.103198" target="_blank">Journal Link</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <span class="paper__title">Examining COVID-19 Mortality Inequalities Across 169 Countries</span><br>
+        <span class="paper__coauthors">(with Emiliano Lopez Barrera, Kristina Miljkovic, and Dragan Miljkovic)</span>
+        <span class="paper__journal"><em>Health Policy</em>: 105345, 2025</span>
+        <div class="paper__links">
+          <a href="https://doi.org/10.1016/j.healthpol.2025.105345" target="_blank">Journal Link</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <span class="paper__title">The Role of Funding on Research and Science: The Impact of Glyphosate Herbicides on Health and the Environment</span><br>
+        <span class="paper__coauthors">(with James Caton and Dragan Miljkovic)</span>
+        <span class="paper__journal"><em>Journal of Policy Modeling</em>, 2023</span>
+        <div class="paper__links">
+          <a href="https://doi.org/10.1016/j.jpolmod.2023.01.001" target="_blank">Journal Link</a>
+        </div>
+      </div>
+
+      <div class="paper">
+        <span class="paper__title">Food Security in Northern Ghana: Does Income from Shea-Based Livelihoods Matter?</span><br>
+        <span class="paper__coauthors">(with Romeo Oduro Akrasi, Irene Susanna Egyir, Alhassan Wayo Seini, Martha Awo, and Emmanuel Okyere)</span>
+        <span class="paper__journal"><em>Forests, Trees, and Livelihoods</em>, 2021</span>
+        <div class="paper__links">
+          <a href="https://doi.org/10.1080/14728028.2021.1948922" target="_blank">Journal Link</a>
+        </div>
+      </div>
+
+      <h2><strong>Working Papers</strong></h2>
+
+      <div class="paper">
+        <span class="paper__title">Pause and Reform: Can Temporary Bans Generate Environmental Recovery?</span>
+        <div class="paper__links">
+          <a href="#">Draft</a>
+        </div>
+        <p class="paper__abstract">
+          Do environmental regulations in developing countries fail because policies are ineffective or because they are weakly enforced? This paper studies a rare policy sequence that separates these channels: a strictly enforced nationwide ban on artisanal mining followed by a transition to a reformed regulatory regime. Guided by a model of enforcement and entry, we show that tighter enforcement raises the participation threshold for mining and generates environmental recovery. Using satellite data and geological variation in mining exposure, we estimate the effects of each phase. Environmental gains emerge with a lag and peak after a full year of enforcement: vegetation increases by about 3 percent and local pollution declines. These gains erode once enforcement weakens, with only a small share persisting under the reformed regime. The results highlight enforcement capacity, rather than institutional design, as the key constraint on environmental policy effectiveness.
+        </p>
+      </div>
+
+      <div class="paper">
+        <span class="paper__title">Dry weather, empty classrooms: How do rainfall shocks reduce schooling?</span><br>
+        <span class="paper__coauthors">(with Kashi Kafle)</span>
+        <span class="paper__journal">Under review at <em>American Journal of Agricultural Economics</em></span>
+        <div class="paper__links">
+          <a href="https://papers.ssrn.com/sol3/papers.cfm?abstract_id=6165707" target="_blank">Draft</a>
+        </div>
+        <p class="paper__abstract">
+          We unpack the mechanisms through which rainfall shocks disrupt school enrollment in agrarian economies. We provide a simple theoretical model showing that income loss and labor constraints under imperfect markets mediate the effects of rainfall shocks on schooling. Empirically, we estimate the distributional impacts of rainfall shocks by combining micro-household panel data from Tanzania with high-resolution rainfall data and vegetation indices. Severe droughts (rainfall below the 10th percentile) reduce school enrollment by 10 percent, whereas moderate rainfall deficits or excess rainfall have no significant impact. The effects are concentrated among agricultural and asset-poor households and are largest for adolescents. Extreme droughts increase absenteeism by reducing agricultural yields, contracting hired labor, and cutting education spending significantly. Income shocks from high-value, water-intensive crops—not food staples—explain the negative impacts. Results clarify mixed evidence by identifying vulnerable groups and tracing the impact pathway. Findings underscore the need for targeted interventions to sustain schooling and build resilience in drought-prone regions.
+        </p>
+      </div>
+
+      <div class="paper">
+        <span class="paper__title">Impacts of Private Land Restoration on Household Wellbeing in Ethiopia</span><br>
+        <span class="paper__coauthors">(with Kashi Kafle and Soumya Balasubramanya)</span>
+        <span class="paper__journal">Under review at <em>American Journal of Agricultural Economics</em></span>
+        <p class="paper__abstract">
+          Land restoration activities (LRA) on private smallholder farms may reduce land and labor productivity contemporaneously, even though both may increase over time. This temporal tradeoff could reduce smallholder well-being contemporaneously, requiring short-term incentives to compensate for these negative effects. We take the case of Ethiopia—which has the largest land restoration program in the world—to examine (1) contemporaneous effects of implementing LRA on smallholder households' wellbeing, land productivity, and labor productivity; (2) the effect of social welfare programs (food/cash for work) on the wellbeing of smallholders who implement LRA on their private lands; and (3) the effect of LRA on land productivity over time. We use three panels of the LSMS-ISA data between 2011 and 2016, and remotely sensed vegetative index data between 2011 and 2018. We find that, contemporaneously, LRA reduces land productivity and labor productivity, but improves household consumption expenditure due to LRA-implementing households working in and receiving transfers from social welfare programs. LRA increases land productivity around five years after implementation. As the adoption of LRA can contemporaneously reduce land and labor productivity, providing short-term social protection through food/cash-for-work programs can encourage the adoption of LRA by reducing rural distress.
+        </p>
+      </div>
+
+
+      <h2><strong>Work in Progress</strong></h2>
+
+      <ul class="wip-list">
+        <li>Information Provision, Technology Adoption and Behavioral Change <em>(with Rodolfo Nayga &amp; Levenson Badio)</em></li>
+        <li>Air Pollution and Household Food Purchasing Decisions <em>(with Arsene Agossadou &amp; Kelvin Bobbie)</em></li>
+        <li>Stress under Shocks: Food Insecurity, Weather Shocks, and Mental Health in Malawi <em>(with Wei Li &amp; Kashi Kafle)</em></li>
+        <li>Colonial Legacies in the Labor Market: Preference for Expatriate Managers <em>(with Levenson Badio)</em></li>
+      </ul>
+
+    </main>
+  </div>
+
+  <footer class="site-footer">
+    © 2026 Kodjo Barnor. Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> &amp;
+    <a href="https://github.com/academicpages/academicpages.github.io" target="_blank">AcademicPages</a>,
+    a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" target="_blank">Minimal Mistakes</a>.
+  </footer>
+
+</body>
+</html>

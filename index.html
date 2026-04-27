@@ -3,7 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Kodjo Barnor</title>
+
+  <title>Kodjo Barnor | Environmental and Development Economist</title>
+
+  <meta name="description" content="Kodjo Barnor is a PhD candidate in Agricultural Economics at Texas A&M University specializing in environmental and development economics, climate shocks, resource governance, health, and household welfare." />
+  <meta name="keywords" content="Kodjo Barnor, environmental economics, development economics, agricultural economics, climate shocks, health economics, resource economics, Texas A&M University" />
+  <meta name="author" content="Kodjo Barnor" />
+  <meta name="robots" content="index, follow" />
+
+  <link rel="canonical" href="https://kodjobarnor.github.io/" />
+
+  <meta property="og:title" content="Kodjo Barnor | Environmental and Development Economist" />
+  <meta property="og:description" content="PhD Candidate in Agricultural Economics at Texas A&M University working on environmental and development economics, climate shocks, resource governance, and health." />
+  <meta property="og:url" content="https://kodjobarnor.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:image" content="https://kodjobarnor.github.io/profile.jpg" />
+
   <style>
     :root {
       --masthead-bg: #494e52;
@@ -31,7 +46,6 @@
     a { color: var(--link); text-decoration: none; }
     a:hover { color: var(--link-hover); text-decoration: underline; }
 
-    /* ── MASTHEAD ── */
     .masthead {
       background: var(--masthead-bg);
       border-bottom: 1px solid #3d4144;
@@ -39,6 +53,7 @@
       top: 0;
       z-index: 100;
     }
+
     .masthead__inner {
       max-width: var(--max);
       margin: 0 auto;
@@ -47,6 +62,7 @@
       justify-content: space-between;
       align-items: center;
     }
+
     .masthead__title a {
       color: #fff;
       font-family: var(--font-sans);
@@ -55,7 +71,12 @@
       letter-spacing: 0.02em;
       text-decoration: none;
     }
-    .masthead__title a:hover { opacity: 0.8; text-decoration: none; color: #fff; }
+
+    .masthead__title a:hover {
+      opacity: 0.8;
+      text-decoration: none;
+      color: #fff;
+    }
 
     .greedy-nav {
       display: flex;
@@ -63,15 +84,21 @@
       font-family: var(--font-sans);
       font-size: 0.9rem;
     }
+
     .greedy-nav a {
       color: #fff;
       padding: 0.5rem 0.85rem;
       text-decoration: none;
     }
-    .greedy-nav a:hover { opacity: 0.75; text-decoration: none; color: #fff; }
+
+    .greedy-nav a:hover {
+      opacity: 0.75;
+      text-decoration: none;
+      color: #fff;
+    }
+
     .greedy-nav a.active { font-weight: 600; }
 
-    /* ── TWO-COLUMN LAYOUT ── */
     .page__wrap {
       max-width: var(--max);
       margin: 0 auto;
@@ -82,11 +109,11 @@
       align-items: start;
     }
 
-    /* ── SIDEBAR ── */
     .author-profile {
       font-family: var(--font-sans);
       font-size: 0.88rem;
     }
+
     .author-profile__avatar {
       width: 100%;
       max-width: 200px;
@@ -94,18 +121,21 @@
       display: block;
       margin-bottom: 1rem;
     }
+
     .author-profile__name {
       font-size: 1.05rem;
       font-weight: 700;
       color: var(--text);
       margin-bottom: 0.25rem;
     }
+
     .author-profile__bio {
       color: var(--muted);
       font-size: 0.84rem;
       margin-bottom: 1rem;
       line-height: 1.5;
     }
+
     .author-profile__follow-label {
       display: block;
       font-size: 0.7rem;
@@ -117,10 +147,12 @@
       padding-top: 0.6rem;
       margin-bottom: 0.5rem;
     }
+
     .author-profile__links {
       list-style: none;
       font-size: 0.85rem;
     }
+
     .author-profile__links li {
       display: flex;
       align-items: center;
@@ -128,20 +160,36 @@
       margin-bottom: 0.35rem;
       color: var(--muted);
     }
-    .author-profile__links li a { color: var(--muted); }
-    .author-profile__links li a:hover { color: var(--link); text-decoration: none; }
-    .icon { font-size: 0.8rem; flex-shrink: 0; }
 
-    /* ── MAIN CONTENT ── */
+    .author-profile__links li a { color: var(--muted); }
+
+    .author-profile__links li a:hover {
+      color: var(--link);
+      text-decoration: none;
+    }
+
+    .icon {
+      font-size: 0.8rem;
+      flex-shrink: 0;
+    }
+
     .page__content {
       padding-top: 0.5rem;
+      max-width: 850px;
     }
+
+    .page__content h1 {
+      font-family: var(--font-sans);
+      font-size: 1.8rem;
+      margin-bottom: 1rem;
+      color: var(--text);
+    }
+
     .page__content p {
       margin-bottom: 1.1rem;
       font-size: 1rem;
     }
 
-    /* ── FOOTER ── */
     .site-footer {
       background: var(--masthead-bg);
       color: rgba(255,255,255,0.5);
@@ -151,24 +199,43 @@
       padding: 1rem;
       margin-top: 2rem;
     }
+
     .site-footer a { color: rgba(255,255,255,0.65); }
-    .site-footer a:hover { color: #fff; text-decoration: underline; }
+
+    .site-footer a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
 
     @media (max-width: 600px) {
-      .masthead__inner { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+      .masthead__inner {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.4rem;
+      }
+
       .greedy-nav { flex-wrap: wrap; }
-      .page__wrap { grid-template-columns: 1fr; gap: 1.5rem; }
+
+      .page__wrap {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        padding-top: 2.5rem;
+      }
+
       .author-profile__avatar { max-width: 150px; }
     }
   </style>
 </head>
+
 <body>
 
-  <!-- MASTHEAD -->
-  <div class="masthead">
+  <header class="masthead">
     <div class="masthead__inner">
-      <div class="masthead__title"><a href="index.html">Kodjo Barnor</a></div>
-      <nav>
+      <div class="masthead__title">
+        <a href="index.html">Kodjo Barnor</a>
+      </div>
+
+      <nav aria-label="Main navigation">
         <ul class="greedy-nav">
           <li><a href="index.html" class="active">About</a></li>
           <li><a href="research.html">Research</a></li>
@@ -178,51 +245,74 @@
         </ul>
       </nav>
     </div>
-  </div>
+  </header>
 
-  <!-- BODY -->
   <div class="page__wrap">
 
-    <!-- SIDEBAR -->
     <aside>
       <div class="author-profile">
-        <img class="author-profile__avatar" src="profile.jpg" alt="Kodjo Barnor" />
+        <img class="author-profile__avatar" src="profile.jpg" alt="Portrait of Kodjo Barnor" />
+
         <div class="author-profile__name">Kodjo Barnor</div>
-        <div class="author-profile__bio">PhD Candidate in Agricultural Economics<br>Texas A&amp;M University</div>
+
+        <div class="author-profile__bio">
+          PhD Candidate in Agricultural Economics<br>
+          Texas A&amp;M University
+        </div>
+
         <span class="author-profile__follow-label">Follow</span>
+
         <ul class="author-profile__links">
           <li><span class="icon">📍</span> College Station, Texas</li>
           <li><span class="icon">🔗</span> <a href="CV.pdf">CV</a></li>
-          <li><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/kodjobarnor" target="_blank">LinkedIn</a></li>
-          <li><span class="icon">🎓</span> <a href="https://scholar.google.com/citations?user=CsUm1EoAAAAJ&hl=en">Google Scholar</a></li>
-          <li><span class="icon">💻</span> <a href="#">GitHub</a></li>
+          <li><span class="icon">🔗</span> <a href="https://www.linkedin.com/in/kodjobarnor" target="_blank" rel="noopener">LinkedIn</a></li>
+          <li><span class="icon">🎓</span> <a href="https://scholar.google.com/citations?user=CsUm1EoAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a></li>
+          <li><span class="icon">💻</span> <a href="https://github.com/kodjobarnor" target="_blank" rel="noopener">GitHub</a></li>
         </ul>
       </div>
     </aside>
 
-    <!-- MAIN -->
-<main class="page__content">
-  <p>
-    Welcome! I am a PhD candidate in Agricultural Economics at <a href="https://agecon.tamu.edu/" target="_blank">Texas A&amp;M University</a> (expected August 2026). My dissertation, <em>Three Essays on Environmental and Development Economics</em>, is advised by Dr. Kashi Kafle.
-  </p>
-  <p>
-    My research lies at the intersection of environmental, resource, and development economics. I study how environmental shocks, natural resource policies, and land restoration shape health, human capital, agricultural productivity, and household welfare across both developing and developed country contexts.
-  </p>
-  <p>
-    I apply causal inference, machine learning, and geospatial analysis to large-scale administrative and satellite data. My work draws on approaches such as difference-in-differences, event studies, and instrumental variables to generate policy-relevant evidence.
-  </p>
-  <p>
-    My research spans three interconnected areas: environmental policy and resource governance; climate risk, agriculture, and household adaptation; and environmental shocks, health, and human capital. Current projects examine rainfall shocks and education in Tanzania, land restoration in Ethiopia, environmental responses to mining bans, and the mental health effects of air pollution.
-  </p>
-  <p>
-    While much of my empirical work focuses on Sub-Saharan Africa, my research agenda is broadly motivated by questions that extend across both developing and developed economies.
-  </p>
-</main>
+    <main class="page__content">
+      <h1>Kodjo Barnor</h1>
+
+      <p>
+        Welcome! I am a PhD candidate in Agricultural Economics at
+        <a href="https://agecon.tamu.edu/" target="_blank" rel="noopener">Texas A&amp;M University</a>,
+        expected to complete my degree in August 2026. My dissertation,
+        <em>Three Essays on Environmental and Development Economics</em>, is advised by Dr. Kashi Kafle.
+      </p>
+
+      <p>
+        My research lies at the intersection of environmental, resource, and development economics.
+        I study how environmental shocks, natural resource policies, and land restoration shape health,
+        human capital, agricultural productivity, and household welfare across both developing and
+        developed country contexts.
+      </p>
+
+      <p>
+        I use causal inference, machine learning, and geospatial analysis with large-scale administrative,
+        household survey, and satellite data. My work draws on methods such as difference-in-differences,
+        event studies, and instrumental variables to generate credible and policy-relevant evidence.
+      </p>
+
+      <p>
+        My research spans three interconnected areas: environmental policy and resource governance;
+        climate risk, agriculture, and household adaptation; and environmental shocks, health, and human
+        capital. Current projects examine rainfall shocks and education in Tanzania, land restoration in
+        Ethiopia, environmental responses to mining bans, and the mental health effects of air pollution.
+      </p>
+
+      <p>
+        While much of my empirical work focuses on Sub-Saharan Africa, my broader research agenda is
+        motivated by questions that extend across both developing and developed economies.
+      </p>
+    </main>
 
   </div>
 
-  <!-- FOOTER -->
   <footer class="site-footer">
-    © 2026 Kodjo Barnor. Powered by <a href="http://jekyllrb.com" target="_blank">Jekyll</a> &amp;
-    <a href="https://github.com/academicpages/academicpages.github.io" target="_blank">AcademicPages</a>,
-    a fork of <a href="https://mademistakes.com/work/minimal-mistakes-jekyll-theme/" target="_blank">Minimal
+    © 2026 Kodjo Barnor.
+  </footer>
+
+</body>
+</html>
